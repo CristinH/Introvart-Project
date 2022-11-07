@@ -1,0 +1,35 @@
+{% extends "shop/layouts/main.html" %}
+{% block title %}
+Produse | Introvart
+{% endblock title %}
+{% block content %}
+<section class="container">
+    <hr style="border-top: 3px solid #013801;">
+</section>
+<section class="container">
+    <div class="row">
+        <div class="col-12">
+            <h4 class="mb-3 title2 text-center">~ Produse ~</h4>
+        </div>
+        {% for item in products %}
+        <div class="col-md-4 col-lg-3">
+            <div class="card my-3 card2">
+                <img src="{{item.product_image.url}}" class="card-image-top" alt="Categorie">
+                <a href="{% url 'product_details' item.category.name item.name %}">
+                <div class="card-body">
+                    <h5 class="card-title title2a">{{item.name}}</h5>
+                    <p class="card-text title3">
+                        <span class="float-end new_price">~~ {{ item.selling_price | stringformat:'d' }} lei ~~</span>
+                    </p>
+                </div>
+            </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    </div>
+</section>
+<section class="container">
+    <hr style="border-top: 3px solid #013801;">
+</section> 
+{% endblock content %}

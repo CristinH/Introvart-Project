@@ -1,0 +1,64 @@
+{% extends "shop/layouts/main.html" %}
+{% block title %}
+Acasă | Introvart
+{% endblock title %}
+
+{% block content %}
+{% include "shop/inc/slider.html" %}
+<section class="container">
+    <hr style="border-top: 3px solid #013801;">
+</section>
+<section class="py-2 text-center container">
+    <p class="title1a">The uniqueness of handmade objects tells a story about each and every one of them, and that alone makes them beautiful.</p>
+</section>
+<section class="container">
+    <div class="row">
+        <div class="col-12">
+        </div>
+
+        {% for item in category %}
+        <div class="col-lg-4 col-lg-3">
+            <div class="card my-3 card1">
+                <h5 class="card-title title2 text-center">{{item.name}}</h5>
+                <img src="{{item.image.url}}" class="card-image-top" alt="Categorie">
+                <div class="card-body">
+                    <p class="card-text title3">{{ item.description }}</p>
+
+                    <a class="btn btn1" href="{% url 'collections' item.name %}" role="button">Vezi produse</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</section>
+<section class="container">
+    <hr style="border-top: 3px solid #013801;">
+</section>
+<section class="container">
+    <div class="row">
+        <div class="col-12">
+            <h4 class="mb-3 title2 text-center">~ Trending ~</h4>
+        </div>
+        {% for item in products %}
+        <div class="col-md-4 col-lg-3">
+            <div class="card my-3 card2">
+                <img src="{{item.product_image.url}}" class="card-image-top" alt="Categorie">
+                <a href="{% url 'product_details' item.category.name item.name %}">
+                <div class="card-body">
+                    <h5 class="card-title title2a">{{item.name}}</h5>
+                    <p class="card-text title3">
+                        <span class="float-end new_price">~~ {{ item.selling_price | stringformat:'d' }} lei ~~</span>
+                    </p>
+                </div>
+            </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    </div>
+</section>
+<section class="container">
+    <hr style="border-top: 3px solid #013801;">
+</section>
+{% endblock content %}

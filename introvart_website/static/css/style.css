@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+
+
+.carousel-item img {
+    object-fit: cover;
+    object-position: center;
+    height: 60vh;
+    overflow: hidden;
+}
+
+.old_price {
+    font-weight: bold;
+    color: red;
+}
+
+
+
+.pic-box {
+    position: relative;
+}
+
+.hot {
+    background-color: #fefce5;
+    color: #013801;
+    width: 110px;
+    text-align: center;
+    font-weight: bold;
+    display: inline;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    z-index: 10;
+}
+
+body {
+    background-color: #fefce5;
+    min-height: 100%;
+}
+
+html {
+    height: 100%;
+}
+
+.navbar{
+    background-color: #013801;
+    height:70px;
+}
+
+footer{
+    background-color: #013801;
+    color: #fefce5;
+    height:200px;
+    text-align: center;
+}
+
+.nav-link:hover {
+    color: #45bd59;
+}
+
+.title1{
+    color: #fefce5;
+}
+
+.bi.bi-heart:hover {
+    color: #317512 !important;
+  }
+
+.btn1{
+    color: #fefce5;
+    text-align: center;
+    background-color: #317512;
+}
+
+.card1{
+    background-color: #fefce5;
+    border: 3px solid #317512;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+}
+
+.title2{
+    font-size: 28px;
+    color: #013801;
+    font-family: "Dancing script", sans-serif !important;
+    font-style: normal !important;
+    font-weight: bolder !important;
+}
+
+.title1a{
+    font-family: "Dancing script", sans-serif;
+    font-size: 24px;
+    color: #013801;
+    font-weight: 400;
+}
+
+.card2{
+    background-color: #fefce5;
+    border: 1px solid #317512;
+    padding: 10px;
+    font-size: 20px;
+    font-family: "Dancing script", sans-serif !important;
+    color: #317512 !important;
+}
+
+.title2a{
+    font-size: 24px;
+    color: #013801;
+    font-family: "Dancing script", sans-serif !important;
+    font-style: normal !important;
+    font-weight: bolder !important;
+}
+
+.title3{
+    font-size: 24px;
+    color: #317512;
+    font-weight: 400 !important;
+    font-family: "Dancing script", sans-serif !important;
+    font-style: normal !important;
+}
+
+.title4{
+    font-size: 41px;
+    color: #013801;
+    font-family: "Dancing script", sans-serif !important;
+    font-style: normal !important;
+    font-weight: bolder !important;
+}
+
+.title5{
+    font-family: "Dancing script", sans-serif;
+    font-size: 22px;
+    color: #013801;
+    font-weight: 400;
+    
+}

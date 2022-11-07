@@ -1,0 +1,35 @@
+{% load static %}
+<footer class="container-fluid footer">
+  
+    
+    <section class="container">
+        <br>
+        <div class="text-center mt-3">
+            <div class="row mt-3">
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <a class="nav-link" href="{% url 'terms_cond' %}">Termeni și condiții</a>
+                </div>
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <a class="nav-link" href="{% url 'confid' %}">Confidențialitate</a>
+                </div>
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <a class="nav-link" href="{% url 'delivery' %}">Termeni de livrare</a>
+                </div>
+                <div class="col-md-4 col-lg-3 col-xl-2 mx-auto mb-4">
+                    <a class="nav-link" href="{% url 'contact' %}"> Contact</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container d-flex justify-content-center">
+        <div>
+            <a href="#" class="me-4 text-reset"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="me-4 text-reset"><i class="bi bi-whatsapp"></i></a>
+            <a href="#" class="me-4 text-reset"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="me-4 text-reset"><i class="bi bi-twitter"></i></a>
+        </div>
+    </section>
+    <div class="text-center p-4">
+        &copy;  2022 Copyright <a class="text-reset" href="https://introvart.ro"> introvart.ro</a>
+    </div>
+</footer>

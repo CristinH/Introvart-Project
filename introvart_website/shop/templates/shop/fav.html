@@ -1,0 +1,45 @@
+{% extends 'shop/layouts/main.html' %}
+{% block title %}
+Produse favorite | Introvart
+{% endblock title %}
+{% block content %}
+<section class="container">
+    <hr style="border-top: 3px solid #013801;">
+    <h4 class="mb-3 title2 text-center">Produse favorite</h4>
+</section>
+    <section class="py-4 my-5" style="min-height:600px;">
+        <div class="container">
+        <div class="row">
+            <div class="col-12">
+            
+            <table class="table table-bordered table-striped title1a border-success table-sm text-center">
+                <thead>
+                    <tr>
+                        <th>Produs</th>
+                        <th>Nume</th>
+                        <th>Preț</th>
+                        <th>Adaugă în coș</th>
+                        <th>Șterge</th>
+                    </tr>
+                </thead>
+            
+                <tbody>
+                {% for item in fav %}
+                    <tr>
+                        <a href="">
+                        <td><img src="{{item.product.product_image.url}}" height="50px" alt="{{item.product.name}}"></td>
+                        <td>{{item.product.name}}</td>
+                        </a>
+                        <td>{{item.product.selling_price | stringformat:'d'}} lei</td>
+                        <td><a href="" class="btn btn1"><i class="bi bi-bag-check"></i></button></a></td>
+                        <td><a href="{% url 'remove_fav' item.id %}" style="color: #317512" onclick="return confirm('Confirmați stergerea')"><i class="bi bi-x-circle"></i></a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+                <tr>
+            </table>
+        
+            </div>
+        </div>
+    </section>
+{% endblock content %}

@@ -1,0 +1,51 @@
+{% extends "shop/layouts/main.html" %}
+{% load static %}
+{% block title %}
+Contact | Introvart
+{% endblock title %}
+{% block content %}
+<section class="container">
+    <hr style="border-top: 3px solid #013801;">
+</section>
+<section class="container">
+    <div class="row">
+        <div class="col-12">
+            <h4 class="mb-3 title2 text-center">~ Contact ~</h4>
+        </div>
+        <div class="col-4 my-3 pic-box">
+            <img src="{% static 'images/contact.jpg' %}" class="card2" alt="about" width="500" height="333">
+        </div>
+        <div class="col-6 my-4" style="position:absolute; right: 10px; top:170px;">
+            <h1 class="title2"><i class="bi bi-envelope"></i> Email: cristin.hacichian@gmail.com</h1>
+            <br>
+            <h1 class="title2"><i class="bi bi-telephone"></i> Telefon: 0754 654 509</h1>
+        </div>
+        <section class="container">
+            <hr style="border-top: 3px solid #013801;">
+        </section>
+        <div class="container">
+        <form class="" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="fname">Nume</label>
+                <input name="name" type="text" id="fname" class="form-control" placeholder="Numele dvs." required>
+
+                <label for="exampleInputEmail">Email</label>
+                <input name="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Adresa dvs. de email" required>
+
+                <label for="subject">Subiect</label>
+                <textarea name="subject" class="form-control" name="subject" id="subject" placeholder="Va ascult..." style="height: 200px" required></textarea>
+                <br>
+                <input type="submit" class="btn btn1" value="Trimite">
+            </div>
+        </form>
+        </div>
+        
+    </div>
+    </div>
+</section>
+<section class="container">
+    <hr style="border-top: 3px solid #013801;">
+</section>
+ 
+{% endblock content %}

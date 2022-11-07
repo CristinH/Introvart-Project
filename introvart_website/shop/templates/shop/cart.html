@@ -1,0 +1,61 @@
+{% extends 'shop/layouts/main.html' %}
+{% block title %}
+Coșul meu | Introvart
+{% endblock title %}
+{% block content %}
+<section class="container">
+    <hr style="border-top: 3px solid #013801;">
+    <h4 class="mb-3 title2 text-center">Coșul meu</h4>
+</section>
+    <section class="py-4 my-5" style="min-height:600px;">
+        <div class="container">
+        <div class="row">
+            <div class="col-12">
+        
+            <table class="table table-bordered table-striped title5 border-success table-sm text-center">
+                <tr>
+                    <th>Produs</th>
+                    <th>Nume</th>
+                    <th>Preț</th>
+                    <th>Cantitate</th>
+                    <th>Total</th>
+                    <th>Șterge</th>
+                </tr>
+            
+
+                {% for item in cart %}
+                <tr>
+                <td><img src="{{item.product.product_image.url}}" height="50px" alt="{{item.product.name}}"></td>
+                <td>{{item.product.name}}</td>
+                <td>{{item.product.selling_price | stringformat:'d'}}</td>
+                <td>{{item.product_qty}}</td>
+                <td class="amt">{{item.total_cost | stringformat:'d'}}</td>
+                <td><a href="{% url 'remove_cart' item.id %}" style="color: #317512" onclick="return confirm('Confirmați ștergerea')"><i class="bi bi-x-circle"></i></a></td>
+                </tr>
+                {% endfor %}
+                <tr>
+                <td></td>
+                <td></td>
+                <td colspan="2"><b>Preț total :</b></td>
+                <th id="net">0</th>
+                <td><button class="btn btn1 btn-sm">
+                    <i class="bi bi-check-circle"></i> Plătește
+                </button></td>
+                </tr>
+            
+            </table>
+        
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const nodes = document.querySelectorAll('.amt');
+        const arr = Array.from(nodes);
+        const res = arr.reduce((acc, curr) => {
+        return acc += Number(curr.textContent)
+        }, 0);
+        document.getElementById("net").innerHTML= res+" lei ";
+
+    </script>
+{% endblock content %}
